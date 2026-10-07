@@ -29,15 +29,15 @@ header h1 {
 }
 
 main {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 30px;
-  justify-content: center;
+  align-items: start;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   main {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
   }
 }
 
@@ -47,7 +47,7 @@ section {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 500px;
+  max-width: none;
 }
 
 section h3 {
@@ -132,6 +132,39 @@ section h3 {
 
 .form-group {
   margin-bottom: 15px;
+}
+
+.activity-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0 12px;
+}
+
+.activity-filter-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.filter-submit {
+  min-width: 100px;
+}
+
+.activity-count {
+  min-height: 1.6em;
+  margin-bottom: 12px;
+  color: #555;
+  font-size: 14px;
+}
+
+.activity-category {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background-color: #e8eaf6;
+  color: #283593;
+  font-size: 13px;
+  font-weight: bold;
 }
 
 .form-group label {

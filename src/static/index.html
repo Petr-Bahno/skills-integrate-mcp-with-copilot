@@ -15,6 +15,32 @@
     <main>
       <section id="activities-container">
         <h3>Available Activities</h3>
+        <form id="activity-filter-form">
+          <div class="activity-filters" aria-label="Filter and sort activities">
+            <div class="form-group">
+              <label for="activity-search">Search activities:</label>
+              <input type="search" id="activity-search" placeholder="Name, description, or schedule" />
+            </div>
+            <div class="form-group">
+              <label for="category-filter">Category:</label>
+              <select id="category-filter">
+                <option value="">All categories</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="sort-order">Sort by:</label>
+              <select id="sort-order">
+                <option value="name-asc">Name (A to Z)</option>
+                <option value="time-asc">Start time (earliest first)</option>
+                <option value="time-desc">Start time (latest first)</option>
+              </select>
+            </div>
+          </div>
+          <div class="activity-filter-actions">
+            <button type="submit" class="filter-submit">Submit</button>
+          </div>
+        </form>
+        <p id="activity-count" class="activity-count" aria-live="polite"></p>
         <div id="activities-list">
           <!-- Activities will be loaded here -->
           <p>Loading activities...</p>
